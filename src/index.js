@@ -3,9 +3,13 @@ import {greetings} from "./assets/js/greetings";
 import  {background} from "./assets/js/background";
 
 
-timeAndDateModule()
-greetings()
-background()
+window.onload = function() {
+    timeAndDateModule()
+    greetings()
+    background()
+}
+
+
 
 
 
