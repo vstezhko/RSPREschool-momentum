@@ -36,7 +36,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 120px;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
 }
 
 .play-list {
@@ -107,7 +107,11 @@ body {
 }
 
 .pause {
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
   background-image: url("../assets/svg/pause.svg");
+  display: none;
 }
 
 .play-prev {
@@ -116,6 +120,73 @@ body {
 
 .play-next {
   background-image: url("../assets/svg/play-next.svg");
+}
+
+.play-list {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.audio-item {
+  list-style: none;
+  line-height: 150%;
+  padding-left: 30px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-image: url("../assets/svg/play.svg");
+  cursor: pointer;
+}
+
+.audio-item.active {
+  background-image: url("../assets/svg/pause.svg");
+}
+
+.audio-bar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.track-name {
+  margin-bottom: 10px;
+}
+
+.progress {
+  cursor: pointer;
+}
+
+.progress-label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.volume-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input.volume {
+  max-width: 120px;
+}
+.volume-off,
+.volume-up {
+  list-style: none;
+  line-height: 150%;
+  padding-left: 30px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.volume-off {
+  background-image: url("../assets/svg/volume-off.svg");
+}
+
+.volume-up {
+  background-image: url("../assets/svg/volume-up.svg");
+  display: none;
 }
 
 .weather {

@@ -14,7 +14,22 @@
       <div class="player-controls">
         <button class="play-prev player-icon"></button>
         <button class="play player-icon"></button>
+        <button class="pause player-icon"></button>
         <button class="play-next player-icon"></button>
+      </div>
+      <div class="volume-bar">
+        <button class="volume-off player-icon"></button>
+        <button class="volume-up player-icon"></button>
+        <input type="range" id="volume" class="volume"/>
+      </div>
+
+      <div class="audio-bar">
+        <div class="track-name"></div>
+        <label for="audio-bar" class="progress-label">
+          <p class="curr"></p>
+          <p class="max"></p>
+        </label>
+        <progress id="audio-bar" class="progress"></progress>
       </div>
       <ul class="play-list"></ul>
     </div>
