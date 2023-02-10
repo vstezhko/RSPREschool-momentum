@@ -9,7 +9,7 @@ import {translation} from "./assets/js/translation";
 
 window.onload = function() {
 
-    let lang = 'en'
+    let lang = 'ru'
 
     timeAndDateModule(lang)
     translation(lang)

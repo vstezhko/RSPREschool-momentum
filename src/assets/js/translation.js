@@ -13,7 +13,8 @@ export const translation = async function(lang){
                     "afternoon": "Good afternoon",
                     "speed": "m/s",
                     "windSpeed": "Wind speed",
-                    "humidity": "Humidity"
+                    "humidity": "Humidity",
+                    "enterName": "[Enter name]"
                 }
             },
             ru: {
@@ -24,11 +25,13 @@ export const translation = async function(lang){
                     "afternoon": "Добрый день",
                     "speed": "м/с",
                     "windSpeed": "Скорость ветра",
-                    "humidity": "Влажность"
+                    "humidity": "Влажность",
+                    "enterName": "[Введите имя]"
                 }
             }
         }
     }
     )
 
+        document.querySelector(".greeting-container input").placeholder = i18next.t("enterName")
 }
