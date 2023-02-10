@@ -1,6 +1,8 @@
 // greetings
 
 
+import i18next from "i18next";
+
 export const getPartOfDayGreeting = () => {
     const date = new Date()
     const hour = date.getHours()
@@ -24,8 +26,7 @@ export const greetings = function(){
     })
 
 
-    greetingTime.textContent = `Good ${getPartOfDayGreeting()}`
+    greetingTime.textContent = `${i18next.t(getPartOfDayGreeting())}`
     greetingName.value = localStorage.getItem('name')
-
 }
 

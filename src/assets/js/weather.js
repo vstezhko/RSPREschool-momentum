@@ -1,4 +1,6 @@
-export const weather = () => {
+import i18next from "i18next";
+
+export const weather = (lang) => {
 
     const cityInput = document.querySelector('input.city')
     const weatherIcon = document.querySelector('.weather-icon')
@@ -40,7 +42,7 @@ export const weather = () => {
 
     let city = localStorage.getItem('city') || 'Минск'
     const apiKey = '026c96d1416c803e3f5f3b9175665442'
-    const lang = 'ru'
+    // const lang = 'ru'
     const units = 'metric'
 
 
@@ -58,8 +60,8 @@ export const weather = () => {
         weatherIcon.classList.add(`owf-${data.weather[0].id}`);
         temperature.textContent = `${Math.round(data.main.temp)}°C`;
         weatherDescription.textContent = data.weather[0].description;
-        wind.textContent = `Wind speed: ${(data.wind.speed).toFixed(0)} m/s`
-        humidity.textContent = `Humidity: ${(data.main.humidity).toFixed(0)} %`
+        wind.textContent = `${i18next.t("windSpeed")}: ${(data.wind.speed).toFixed(0)} ${i18next.t("speed")}`
+        humidity.textContent = `${i18next.t("humidity")}: ${(data.main.humidity).toFixed(0)} %`
     }
 
     getWeather()

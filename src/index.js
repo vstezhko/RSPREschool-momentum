@@ -4,14 +4,19 @@ import  {background} from "./assets/js/background";
 import {weather} from "./assets/js/weather";
 import {quote} from "./assets/js/ quote";
 import {player} from "./assets/js/player";
+import {translation} from "./assets/js/translation";
 
 
 window.onload = function() {
-    timeAndDateModule()
+
+    let lang = 'en'
+
+    timeAndDateModule(lang)
+    translation(lang)
     greetings()
     background()
-    weather()
-    quote()
+    weather(lang)
+    quote(lang)
     player()
 }
 

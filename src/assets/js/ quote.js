@@ -1,4 +1,4 @@
-export function quote(){
+export function quote(lang){
 
     const quote = document.querySelector('.quote')
     const author = document.querySelector('.author')
@@ -10,7 +10,8 @@ export function quote(){
     async function getQuotes() {
         const quotes = 'assets/js/data.json';
         const res = await fetch(quotes);
-        const data = await res.json();
+        const allQuates = await res.json();
+        const data = allQuates[lang]
 
         let quoteToShow = data[Math.floor(data.length*Math.random())]
         quote.textContent = quoteToShow['text']
