@@ -1,16 +1,20 @@
 // time and date
 
+let timeout
+
 export const timeAndDateModule = function(lang){
+    clearTimeout(timeout)
+
     const time = document.querySelector('.time')
     const date = document.querySelector('.date')
-    showTimeAndDate()
+    showTimeAndDate(lang)
 
-    function showTimeAndDate() {
+    function showTimeAndDate(lang) {
         let currDate = new Date()
         const options = {weekday: 'long', month: 'long', day: 'numeric'};
         time.textContent = currDate.toLocaleTimeString()
         date.textContent = currDate.toLocaleDateString(`${lang}-Br`, options)
-        setTimeout(showTimeAndDate, 1000)
+        timeout = setTimeout(()=>showTimeAndDate(lang), 1000)
     }
 
 }

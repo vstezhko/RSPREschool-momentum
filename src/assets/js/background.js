@@ -31,7 +31,7 @@ export const background = function (){
             const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${getPartOfDayGreeting()}&client_id=NIef7jSPD2FJ-EH95HzmCbxiF-i-FrsXvGf7NDmi2zs`;
             const res =  await fetch(url)
             const data = await res.json()
-            console.log(data.links.download)
+            // console.log(data.links.download)
             return data.urls.regular
         } catch {
             throw new Error('no available image link')
