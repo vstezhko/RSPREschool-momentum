@@ -10,11 +10,34 @@ export const background = function (){
 
     const body = document.querySelector('body')
 
-    const setBackground = (node, images, index) => {
-        node.style.backgroundImage = `url(../assets/img/${getPartOfDayGreeting()}/${images[index]}.webp)`
+
+    let nextImg
+
+    getLinkToImage().then(data => nextImg = data)
+
+    const setApiBackground = (node, images, index) => {
+        if (nextImg) {
+            node.style.backgroundImage = `url(${nextImg})`
+            getLinkToImage().then(data => nextImg = data)
+        } else {
+            node.style.backgroundImage = `url(../assets/img/${getPartOfDayGreeting()}/${images[index]}.webp)`
+        }
     }
 
-    setBackground(body, images, index)
+    setApiBackground(body, images, index)
+
+    async function getLinkToImage() {
+        try {
+            const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${getPartOfDayGreeting()}&client_id=NIef7jSPD2FJ-EH95HzmCbxiF-i-FrsXvGf7NDmi2zs`;
+            const res =  await fetch(url)
+            const data = await res.json()
+            console.log(data.links.download)
+            return data.urls.regular
+        } catch {
+            throw new Error('no available image link')
+        }
+
+    }
 
     nextBtn.addEventListener('click', ()=>{
         console.log('next')
@@ -23,8 +46,7 @@ export const background = function (){
             } else {
                 index = 0
             }
-
-        setBackground(body, images, index)
+        setApiBackground(body, images, index)
         }
     )
 
@@ -35,10 +57,7 @@ export const background = function (){
             } else {
                 index = 19
             }
-        setBackground(body, images, index)
+        setApiBackground(body, images, index)
         }
     )
-
-
-
 }
