@@ -79,7 +79,6 @@ export const background = function (bgSrc){
     changeBgImg(bgSrc)
 
     changeBgBtns.forEach(btn => {
-        // btn.addEventListener('click', handleClick)
         btn.onclick = (e) => {
             handleClick(e)
         };
