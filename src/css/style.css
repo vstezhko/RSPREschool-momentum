@@ -369,8 +369,10 @@ input.volume {
   top: 50%;
 }
 
-.language {
+.language,
+.background-source {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .btn-wrapper {
@@ -384,27 +386,23 @@ input.volume {
   cursor: pointer;
 }
 
-.language .variant {
-  width: 50px;
-  padding: 5px;
+.btn-wrapper .variant {
+  padding: 5px 20px;
 }
 
-.language .variant:not(:last-child) {
+.btn-wrapper .variant:not(:last-child) {
   border-right: 1px solid #79747E;
 }
 
-.language .variant:first-child {
+.btn-wrapper .variant:first-child {
   border-radius: 100px 0 0 100px;
 }
 
-.language .variant:last-child {
+.btn-wrapper .variant:last-child {
   border-radius: 0 100px 100px 0;
 }
 
-
-
-
-.language .variant.active {
+.btn-wrapper .variant.active {
   background: #E8DEF8;
 }
 

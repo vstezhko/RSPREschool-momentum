@@ -11,6 +11,7 @@ import {settings} from "./assets/js/settings";
 window.onload = function() {
 
     let lang = 'ru'
+    let bgSrc = 'local'
 
     const changeLang = (newLang) => {
         if(newLang === 'ru' || newLang === 'en') {
@@ -24,11 +25,19 @@ window.onload = function() {
         }
     }
 
-    settings(changeLang)
+    const changeBgSrc = (newSrc) => {
+        if(newSrc === 'unsplash' || newSrc === 'flickr' || newSrc === 'local') {
+            bgSrc = newSrc
+            console.log(bgSrc)
+            background(bgSrc)
+        }
+    }
+
+    settings(changeLang, changeBgSrc)
     timeAndDateModule(lang)
     translation(lang)
     greetings()
-    background()
+    background(bgSrc)
     weather(lang)
     quote(lang)
     player()
