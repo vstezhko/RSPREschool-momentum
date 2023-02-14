@@ -51,13 +51,11 @@ export const background = function (bgSrc){
     }
 
     const handleClick = function (e) {
-        console.log('click!', bgSrc, e.target.id)
 
-        // if (bgSrc !== 'local') {
-        //     console.log('click')
-        //     changeBgImg(bgSrc)
-        //     return
-        // }
+        if (bgSrc !== 'local') {
+            changeBgImg(bgSrc)
+            return
+        }
 
         if (e.target.id === 'next') {
             if (index < 19) {
@@ -76,12 +74,14 @@ export const background = function (bgSrc){
         }
 
         changeBgImg(bgSrc)
-        console.log('dfghjk')
     }
 
     changeBgImg(bgSrc)
 
     changeBgBtns.forEach(btn => {
-        btn.addEventListener('click', handleClick)
+        // btn.addEventListener('click', handleClick)
+        btn.onclick = (e) => {
+            handleClick(e)
+        };
     })
 }
