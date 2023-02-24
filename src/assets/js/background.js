@@ -1,7 +1,8 @@
 import {getPartOfDayGreeting} from "./greetings";
 
 
-export const background = function (bgSrc){
+export const background = function (bgSrc, tags){
+    console.log(bgSrc,tags)
 
     const changeBgBtns = document.querySelectorAll('.slider-icon')
 
@@ -10,13 +11,15 @@ export const background = function (bgSrc){
     const body = document.querySelector('body')
 
     const changeBgImg = async (src) => {
+        console.log(tags)
+
         switch (src) {
             case 'local':
                 body.style.backgroundImage = `url(../assets/img/${getPartOfDayGreeting()}/${images[index]}.webp)`
                 break
             case 'unsplash':
                 try {
-                    const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${getPartOfDayGreeting()}&client_id=NIef7jSPD2FJ-EH95HzmCbxiF-i-FrsXvGf7NDmi2zs`;
+                    const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${tags || getPartOfDayGreeting()}&client_id=NIef7jSPD2FJ-EH95HzmCbxiF-i-FrsXvGf7NDmi2zs`;
                     const res =  await fetch(url)
                     const data = await res.json()
 
@@ -33,11 +36,12 @@ export const background = function (bgSrc){
                 break
             case 'flickr':
                 try {
-                    const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b1555909a2026432c45153f7bbaac1ce&tags=${getPartOfDayGreeting()}&extras=url_l&format=json&nojsoncallback=1`
+                    const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b1555909a2026432c45153f7bbaac1ce&tags=${tags || getPartOfDayGreeting()}&extras=url_l&format=json&nojsoncallback=1`
                     const res =  await fetch(url)
                     const data = await res.json()
+                    console.log('data', data)
                     const img = new Image()
-                    img.src = data.photos.photo[Math.round(Math.random()*99)].url_l
+                    img.src = data.photos.photo[Math.round(Math.random()*(data.photos.photo.length-1))].url_l
                     img.onload = () => {
                         body.style.backgroundImage = `url(${img.src})`
                     }

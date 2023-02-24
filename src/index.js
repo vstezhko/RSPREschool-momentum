@@ -1,5 +1,5 @@
 import {timeAndDateModule} from "./assets/js/timeAndDate"
-import {greetings} from "./assets/js/greetings";
+import {getPartOfDayGreeting, greetings} from "./assets/js/greetings";
 import  {background} from "./assets/js/background";
 import {weather} from "./assets/js/weather";
 import {quote} from "./assets/js/ quote";
@@ -12,6 +12,9 @@ window.onload = function() {
 
     let lang = 'ru'
     let bgSrc = 'local'
+    let tags = []
+    tags.push(getPartOfDayGreeting())
+    console.log(tags)
 
     const changeLang = (newLang) => {
         if(newLang === 'ru' || newLang === 'en') {
@@ -29,15 +32,21 @@ window.onload = function() {
         if(newSrc === 'unsplash' || newSrc === 'flickr' || newSrc === 'local') {
             bgSrc = newSrc
             console.log(bgSrc)
-            background(bgSrc)
+            background(bgSrc, tags)
         }
     }
 
-    settings(changeLang, changeBgSrc)
+    const changeTags = (newTags) => {
+        tags = newTags
+        console.log(tags)
+        background(bgSrc, tags)
+    }
+
+    settings(changeLang, changeBgSrc, changeTags, tags)
     timeAndDateModule(lang)
     translation(lang)
     greetings()
-    background(bgSrc)
+    background(bgSrc, tags)
     weather(lang)
     quote(lang)
     player()

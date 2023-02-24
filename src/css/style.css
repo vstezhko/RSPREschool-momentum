@@ -406,6 +406,77 @@ input.volume {
   background: #E8DEF8;
 }
 
+.tags-wrapper {
+  text-align: start;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags-wrapper .applied {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags-wrapper .applied li{
+  background: #6750A4;
+  border-radius: 100px;
+  padding: 5px 10px;
+  width: fit-content;
+  list-style: none;
+  display: flex;
+  margin: auto 0 auto 10px;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.tags-wrapper .applied li {
+  margin-bottom: 10px;
+}
+
+.tags-wrapper .applied li .icon-tag {
+  background-image: url('../assets/svg/added.svg');
+  background-size: cover;
+  transition: background-image 0.3s ease-in-out;
+  height: 1rem;
+  width: 15px;
+  cursor: pointer;
+}
+
+.tags-wrapper .applied li:hover .icon-tag {
+  background-image: url('../assets/svg/remove.svg');
+}
+
+
+.tags-wrapper .add-tag {
+  border: 1px solid #79747E;
+  border-radius: 100px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.tags-wrapper .add-tag img {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.tags-wrapper .add-tag form{
+  margin: 0;
+}
+
+.tags-wrapper .add-tag input {
+  display: none;
+  margin: 0 10px;
+  border: none;
+  outline: none;
+  height: 100%;
+}
+
+.tags-wrapper .add-tag.active input{
+  display: block;
+}
+
 
 @media (max-width: 768px) {
   .time {
