@@ -17,7 +17,7 @@ export const getPartOfDayGreeting = () => {
     }
 }
 export const greetings = function(){
-    const greetingTime = document.querySelector('.greeting-container .greeting')
+    const greetingTime = document.querySelector('.greeting-container .greeting-wr')
     const greetingName = document.querySelector('.greeting-container input')
 
     greetingName.addEventListener('input', (e)=>{

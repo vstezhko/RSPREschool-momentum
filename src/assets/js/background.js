@@ -14,8 +14,20 @@ export const background = function (bgSrc, tags){
         console.log(tags)
 
         switch (src) {
-            case 'local':
-                body.style.backgroundImage = `url(../assets/img/${getPartOfDayGreeting()}/${images[index]}.webp)`
+            case 'github':
+
+                try {
+                    const img = new Image()
+                    img.src = `https://github.com/vstezhko/stage1-tasks/blob/assets/images/${getPartOfDayGreeting()}/${images[index]}.jpg?raw=true`
+                    img.onload = () => {
+                        body.style.backgroundImage = `url(${img.src})`
+                    }
+                } catch {
+                    console.log('CATCH')
+                    body.style.backgroundImage = `url(../assets/img/${getPartOfDayGreeting()}/${images[index]}.webp)`
+                    throw new Error('no available image link')
+                }
+
                 break
             case 'unsplash':
                 try {
@@ -56,7 +68,7 @@ export const background = function (bgSrc, tags){
 
     const handleClick = function (e) {
 
-        if (bgSrc !== 'local') {
+        if (bgSrc !== 'github') {
             changeBgImg(bgSrc)
             return
         }

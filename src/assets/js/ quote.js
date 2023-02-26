@@ -4,13 +4,14 @@ export function quote(lang){
     const author = document.querySelector('.author')
     const changeQuote = document.querySelector('.change-quote')
 
-    changeQuote.addEventListener('click', ()=>{
-        getQuotes();
-    })
+
+    changeQuote.onclick = () => getQuotes()
+
     async function getQuotes() {
         const quotes = 'assets/js/data.json';
         const res = await fetch(quotes);
         const allQuates = await res.json();
+        console.log('quote', lang)
         const data = allQuates[lang]
 
         let quoteToShow = data[Math.floor(data.length*Math.random())]
