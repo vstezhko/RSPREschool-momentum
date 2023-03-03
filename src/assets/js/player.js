@@ -2,27 +2,24 @@ import playlist from "../sounds/playlist";
 
 export function player(){
     const playListNode = document.querySelector('.play-list')
-    const progressBar = document.querySelector('progress.progress')
+    const progressBar = document.querySelector('input.progress')
     const progressTimeCurr = document.querySelector('.curr')
     const progressTimeMax = document.querySelector('.max')
     const trackName = document.querySelector('.track-name')
     const volumeBar = document.querySelector('input.volume')
     const volumeOff = document.querySelector('.volume-off')
     const volumeUp = document.querySelector('.volume-up')
+    const playlistBtn = document.querySelector('.playlist')
 
 
-
-    progressBar.addEventListener('click', (e)=>{
-        const start = progressBar.getBoundingClientRect().x
-        const width = progressBar.getBoundingClientRect().width
-        const newPoint = e.pageX - start
-        const newPointPercent = newPoint/width
-        audio.currentTime = newPointPercent * progressBar.max
-        progressBar.value = Math.round(newPointPercent * progressBar.max)
-
-    })
     let isMusicOn = false
     let isSoundOn = true
+    let isPlayListShown = false
+
+    playlistBtn.addEventListener('click', ()=>{
+        playlistBtn.classList.toggle('active')
+        playListNode.classList.toggle('shown')
+    })
 
     playlist.forEach((item, index) => {
         const audioItem = document.createElement('li')
@@ -45,6 +42,8 @@ export function player(){
     audio.src = currentAudio.src;
     audio.currentTime = 0;
     handleProgressOnChangeAudio()
+
+    trackName.textContent = playListNode.children[0].textContent
 
     function setActiveSong(){
         Array.from(playListNode.children).forEach(item => {
@@ -137,6 +136,10 @@ export function player(){
         progressTimeCurr.textContent = `${Math.trunc(audio.currentTime/60).toString().padStart(2, '0')}:${(audio.currentTime%60).toFixed(0).toString().padStart(2, '0')}`
         progressTimeMax.textContent = playlist[audioIndex].duration
     }
+
+    progressBar.addEventListener('change', ()=>{
+        audio.currentTime = progressBar.value
+    })
 
     volumeBar.addEventListener('change', ()=>{
         audio.volume = volumeBar.value/100

@@ -11,25 +11,28 @@
 <body>
   <header class="header">
     <div class="player">
-      <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="pause player-icon"></button>
-        <button class="play-next player-icon"></button>
-      </div>
-      <div class="volume-bar">
-        <button class="volume-off player-icon"></button>
-        <button class="volume-up player-icon"></button>
-        <input type="range" id="volume" class="volume"/>
-      </div>
+      <div class="manage-block">
+        <div class="volume-bar">
+          <button class="volume-off player-icon"></button>
+          <button class="volume-up player-icon"></button>
+          <input type="range" id="volume" class="volume styled-slider" />
 
-      <div class="audio-bar">
-        <div class="track-name"></div>
-        <label for="audio-bar" class="progress-label">
-          <p class="curr"></p>
-          <p class="max"></p>
-        </label>
-        <progress id="audio-bar" class="progress"></progress>
+        </div>
+        <div class="audio-bar">
+          <div class="track-name"></div>
+          <label for="audio-bar" class="progress-label">
+            <p class="curr"></p>
+            <p class="max"></p>
+          </label>
+          <input type="range" id="audio-bar" class="progress styled-slider"/>
+        </div>
+        <div class="player-controls">
+          <button class="playlist player-icon"></button>
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="pause player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
       </div>
       <ul class="play-list"></ul>
     </div>
