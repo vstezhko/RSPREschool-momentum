@@ -56,7 +56,7 @@ window.onload = function() {
     }
 
     const changeBgSrc = (newSrc) => {
-        if(newSrc === 'unsplash' || newSrc === 'flickr' || newSrc === 'github') {
+        if(newSrc === 'unsplash' || newSrc === 'github') {
             bgSrc = newSrc
 
             localStorage.setItem('bgSrc', bgSrc)

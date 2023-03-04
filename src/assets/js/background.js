@@ -46,23 +46,6 @@ export const background = function (bgSrc, tags){
                     throw new Error('no available image link')
                 }
                 break
-            case 'flickr':
-                try {
-                    const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b1555909a2026432c45153f7bbaac1ce&tags=${tags || getPartOfDayGreeting()}&extras=url_l&format=json&nojsoncallback=1`
-                    const res =  await fetch(url)
-                    const data = await res.json()
-                    console.log('data', data)
-                    const img = new Image()
-                    img.src = data.photos.photo[Math.round(Math.random()*(data.photos.photo.length-1))].url_l
-                    img.onload = () => {
-                        body.style.backgroundImage = `url(${img.src})`
-                    }
-                } catch {
-                    console.log('CATCH')
-                    body.style.backgroundImage = `url(../assets/img/${getPartOfDayGreeting()}/${images[index]}.webp)`
-                    throw new Error('no available image link')
-                }
-                break
         }
     }
 
