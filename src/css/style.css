@@ -35,11 +35,11 @@ input[type=range].styled-slider::-webkit-slider-thumb {
   background: #FFFFFF;
   border: none;
   box-shadow: 1px 0 2px #000000;
-  margin-top: calc(max((1em - 1px - 1px) * 0.5,0px) - 1.2em * 0.5);
+  margin-top: calc(max((1em - 1px - 1px) * 0.5,0px) - 1.7em * 0.5);
 }
 
 input[type=range].styled-slider::-webkit-slider-runnable-track {
-  height: 1em;
+  height: 0.5em;
   border: 1px solid #b2b2b2;
   border-radius: 0.5em;
   background: #efefef;
