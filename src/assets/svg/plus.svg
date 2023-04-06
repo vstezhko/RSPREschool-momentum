@@ -1,0 +1,17 @@
+<svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.8">
+<g opacity="0.75" filter="url(#filter0_b_37_22)">
+<ellipse class="color" cx="15" cy="14.2105" rx="15" ry="14.2105" fill="#EDEDED"/>
+</g>
+<rect x="13.4211" y="7.10529" width="3.67255" height="14.1332" rx="1.83628" fill="#525353"/>
+<rect x="7.89471" y="16.5789" width="3.67255" height="14.1332" rx="1.83628" transform="rotate(-90 7.89471 16.5789)" fill="#525353"/>
+</g>
+<defs>
+<filter id="filter0_b_37_22" x="-80" y="-80" width="190" height="188.421" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="40"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_37_22"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_37_22" result="shape"/>
+</filter>
+</defs>
+</svg>
