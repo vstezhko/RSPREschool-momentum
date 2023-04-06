@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Arial-MT';
-  src: url("../assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
+  src: url("assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
  }
 
 * {
@@ -183,7 +183,7 @@ body {
   font-size: 16px;
   color: #fff;
   text-align: center;
-  background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5);
+  background: url("assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   transition: background-image 1s ease-in-out;
 }
@@ -227,7 +227,7 @@ body {
   width: 32px !important;
   height: 32px !important;
   background-size: 20px 20px !important;
-  background-image: url("../assets/svg/playlist_icon.svg");
+  background-image: url("assets/svg/playlist_icon.svg");
   border-radius: 50%;
   padding: 5px !important;
   border: 4px solid rgba(255, 255, 255, 0.45) !important;
@@ -313,23 +313,23 @@ body {
   width: 40px;
   height: 40px;
   background-size: 40px 40px;
-  background-image: url("../assets/svg/play.svg");
+  background-image: url("assets/svg/play.svg");
 }
 
 .pause {
   width: 40px;
   height: 40px;
   background-size: 40px 40px;
-  background-image: url("../assets/svg/pause.svg");
+  background-image: url("assets/svg/pause.svg");
   display: none;
 }
 
 .play-prev {
-  background-image: url("../assets/svg/play-prev.svg");
+  background-image: url("assets/svg/play-prev.svg");
 }
 
 .play-next {
-  background-image: url("../assets/svg/play-next.svg");
+  background-image: url("assets/svg/play-next.svg");
 }
 
 .play-list {
@@ -343,12 +343,12 @@ body {
   padding-left: 30px;
   background-size: 20px 20px;
   background-repeat: no-repeat;
-  background-image: url("../assets/svg/play.svg");
+  background-image: url("assets/svg/play.svg");
   cursor: pointer;
 }
 
 .audio-item.active {
-  background-image: url("../assets/svg/pause.svg");
+  background-image: url("assets/svg/pause.svg");
   text-shadow: 3px 3px 3px rgb(0 0 0 / 30%);
 }
 
@@ -394,11 +394,11 @@ input.volume {
 }
 
 .volume-off {
-  background-image: url("../assets/svg/volume-off.svg");
+  background-image: url("assets/svg/volume-off.svg");
 }
 
 .volume-up {
-  background-image: url("../assets/svg/volume-up.svg");
+  background-image: url("assets/svg/volume-up.svg");
   display: none;
 }
 
@@ -477,12 +477,12 @@ input.volume {
 
 .slide-prev {
   left: 20px;
-  background-image: url("../assets/svg/slider-prev.svg");
+  background-image: url("assets/svg/slider-prev.svg");
 }
 
 .slide-next {
   right: 20px;
-  background-image: url("../assets/svg/slider-next.svg");
+  background-image: url("assets/svg/slider-next.svg");
 }
 
 .time {
@@ -557,7 +557,7 @@ input.volume {
   width: 40px;
   height: 40px;
   background-size: 40px 40px;
-  background-image: url("../assets/svg/icons8-settings-32.svg");
+  background-image: url("assets/svg/icons8-settings-32.svg");
   position: absolute;
   left: 20px;
   bottom: 20px;
@@ -565,7 +565,7 @@ input.volume {
 
 .change-quote {
   margin-bottom: 30px;
-  background-image: url("../assets/svg/reload.svg");
+  background-image: url("assets/svg/reload.svg");
 }
 
 .quote {
@@ -651,7 +651,7 @@ input.volume {
 }
 
 .tags-wrapper .applied li .icon-tag {
-  background-image: url('../assets/svg/added.svg');
+  background-image: url('assets/svg/added.svg');
   background-size: cover;
   transition: background-image 0.3s ease-in-out;
   height: 1rem;
@@ -664,7 +664,7 @@ input.volume {
 }
 
 .tags-wrapper .applied li:hover .icon-tag {
-  background-image: url('../assets/svg/remove2.svg');
+  background-image: url('assets/svg/remove2.svg');
   fill: #525353;
 }
 
@@ -844,13 +844,13 @@ ul.todo-list li input + label {
 }
 
 ul.todo-list li input + label::before{
-  content: url('../assets/svg/checkboxOFF.svg');
+  content: url('assets/svg/checkboxOFF.svg');
   position: relative;
   top: 5px;
 }
 
 ul.todo-list li input:checked + label::before {
-  content: url('../assets/svg/checkboxON.svg');
+  content: url('assets/svg/checkboxON.svg');
 }
 
 ul.todo-list li img {
