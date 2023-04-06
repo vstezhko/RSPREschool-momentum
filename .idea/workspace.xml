@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30c899ba-1340-4de2-a133-81d8940703f6" name="Changes" comment="" />
+    <list default="true" id="30c899ba-1340-4de2-a133-81d8940703f6" name="Changes" comment="feat: add deploy files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,8 +65,16 @@
       <option name="presentableId" value="Default" />
       <updated>1680706124014</updated>
       <workItem from="1680706125180" duration="651000" />
-      <workItem from="1680769894658" duration="2910000" />
+      <workItem from="1680769894658" duration="3357000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: add deploy files">
+      <created>1680773673160</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680773673160</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,5 +102,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: add deploy files" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add deploy files" />
   </component>
 </project>
